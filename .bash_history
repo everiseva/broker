@@ -60,3 +60,49 @@ ll
 cd broker-core-0.4.1.jar 
 cd broker-core-0.4.1
 vi broker-core-0.4.1.jar 
+git config
+git config everiseva@gmail.com
+git config --global user.email everiseva@gmail.com
+git clone github.com:everiseva/broker.git
+git add *
+git commit -m "agora vai de verade"
+git config --global user.name "everiseva"
+git config --global user.email "everiseva@gmail.com"
+git commit -m "agora vai de verade"
+git push origin master
+git push origin broker
+git add --all
+git commit -m "sim, vai"
+git pull origin master
+git init --bare broker.git
+git push origin master
+git init github.com/everiseva/broker.git
+git clone github.com/everiseva/broker.git
+git clone add *
+git add all
+git add --all
+git commit -m "poxxa"
+git push origin master
+git checkout teste
+git init
+git add *
+git commit -m "lalal"
+git checkout -b teste
+git add .
+git commit -m "lalalal"
+git remote add teste github.com/everiseva/broker.git
+git push -u teste
+git checkout master
+git remote add origin git@github.com:everiseva/broker.git
+git push -u origin master
+git init
+git add README.md
+echo "# broker" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:everiseva/broker.git
+git push -u origin master
+git push origin teste
+git push origin teste2
+sudo push
