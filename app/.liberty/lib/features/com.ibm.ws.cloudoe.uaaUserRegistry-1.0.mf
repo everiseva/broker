@@ -1,0 +1,9 @@
+Subsystem-ManifestVersion: 1
+IBM-ShortName: uaaUserRegistry-1.0
+Subsystem-SymbolicName: com.ibm.ws.cloudoe.uaaUserRegistry-1.0;visibility:=public
+Subsystem-Version: 1.0.0
+Subsystem-Content: com.ibm.ws.cloudoe.uaaUserRegistry; version="[1,1.0.100)",
+ com.ibm.websphere.appserver.json-1.0; type="osgi.subsystem.feature"
+Subsystem-Type: osgi.subsystem.feature
+IBM-Feature-Version: 2
+

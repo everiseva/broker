@@ -1,0 +1,11 @@
+com.ibm.ws.cloudoe.management.jackson.annotations;1.0.0.0959;false;1495724920000;12989;lib/;/home/vcap/app/.liberty/icap/lib/com.ibm.ws.cloudoe.management.jackson.annotations_1.0.0.jar
+jackson-core-asl;1.9.11;false;1495724920000;232131;lib/;/home/vcap/app/.liberty/icap/lib/jackson-core-asl_1.9.11.jar
+jcl.over.slf4j;1.6.6;false;1495724920000;17289;lib/;/home/vcap/app/.liberty/icap/lib/jcl.over.slf4j_1.6.6.jar
+slf4j.jdk14;1.6.6;false;1495724920000;8845;lib/;/home/vcap/app/.liberty/icap/lib/slf4j.jdk14_1.6.6.jar
+com.ibm.ws.cloudoe.management.common;1.0.0.0959;false;1495724920000;24224;lib/;/home/vcap/app/.liberty/icap/lib/com.ibm.ws.cloudoe.management.common_1.0.0.jar
+com.ibm.ws.cloudoe.management.httpcomponents.4.3;1.0.0;false;1495724920000;862049;lib/;/home/vcap/app/.liberty/icap/lib/com.ibm.ws.cloudoe.management.httpcomponents.4.3_1.0.0.jar
+jackson-mapper-asl;1.9.11;false;1495724920000;780421;lib/;/home/vcap/app/.liberty/icap/lib/jackson-mapper-asl_1.9.11.jar
+org.apache.commons.codec;1.6.0;false;1495724920000;232771;lib/;/home/vcap/app/.liberty/icap/lib/org.apache.commons.codec_1.6.0.jar
+com.ibm.ws.cloudoe.management.client.liberty.connector;1.0.0.0959;false;1495724920000;39667;lib/;/home/vcap/app/.liberty/icap/lib/com.ibm.ws.cloudoe.management.client.liberty.connector_1.0.0.jar
+com.ibm.ws.cloudoe.management.client.liberty;1.0.0.0959;false;1495724920000;62931;lib/;/home/vcap/app/.liberty/icap/lib/com.ibm.ws.cloudoe.management.client.liberty_1.0.0.jar
+slf4j.api;1.6.6;false;1495724920000;26176;lib/;/home/vcap/app/.liberty/icap/lib/slf4j.api_1.6.6.jar

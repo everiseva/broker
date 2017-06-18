@@ -1,0 +1,322 @@
+********************************************************************************
+product = WebSphere Application Server 17.0.0.2 (wlp-1.0.17.cl170220170523-1818)
+wlp.install.dir = /home/vcap/app/.liberty/
+server.config.dir = /home/vcap/app/wlp/usr/servers/defaultServer/
+java.home = /home/vcap/app/.java/jre
+java.version = 1.8.0
+java.runtime = Java(TM) SE Runtime Environment (pxa6480sr4fp1-20170215_01 (SR4 FP1))
+os = Linux (4.4.0-75-generic; amd64) (en_US)
+process = 38@44897c50-363d-40dd-4702-bb671664b02c
+********************************************************************************
+[6/18/17 14:15:17:134 UTC] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 9.382 seconds
+[6/18/17 14:15:18:673 UTC] 00000021 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[6/18/17 14:15:39:728 UTC] 00000031 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host localhost  (IPv4: 127.0.0.1) port 8080.
+[6/18/17 14:15:41:076 UTC] 0000001a .management.client.service.internal.ManagedBeanContainerImpl I CWSCX0122I: Register management Bean provider: com.ibm.ws.cloudoe.management.client.provider.dump.JavaDumpBeanProvider@dda07d76.
+[6/18/17 14:15:41:082 UTC] 0000001a .management.client.service.internal.ManagedBeanContainerImpl I CWSCX0122I: Register management Bean provider: com.ibm.ws.cloudoe.management.client.provider.logging.LibertyLoggingBeanProvider@68d574ee.
+[6/18/17 14:15:44:536 UTC] 00000022 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application myapp.
+[6/18/17 14:15:45:335 UTC] 0000002f com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.ws.cloudoe.management.client.liberty.connector.
+[6/18/17 14:15:45:386 UTC] 0000002f com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.ws.cloudoe.management.client.liberty.connector has been bound to default_host.
+[6/18/17 14:15:45:417 UTC] 0000002f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:8080/IBMMGMTRest/
+[6/18/17 14:15:45:495 UTC] 00000027 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[6/18/17 14:15:45:498 UTC] 00000027 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/IBMMGMTRest
+[6/18/17 14:15:45:514 UTC] 00000027 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[6/18/17 14:15:53:972 UTC] 00000022 org.jboss.weld.Version                                       I WELD-000900: 2.4.3 (Final)
+[6/18/17 14:16:01:003 UTC] 00000022 com.everis.assistant.access.data.DBConnection                I Async DataSource created
+[6/18/17 14:16:01:004 UTC] 00000022 com.everis.assistant.access.data.DBConnection                I Request DataSource created
+[6/18/17 14:16:01:063 UTC] 00000022 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: myapp.
+[6/18/17 14:16:01:064 UTC] 00000022 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module myapp has been bound to default_host.
+[6/18/17 14:16:01:065 UTC] 00000022 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:8080/
+[6/18/17 14:16:01:073 UTC] 00000022 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application myapp started in 16.536 seconds.
+[6/18/17 14:16:01:144 UTC] 0000002f com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host localhost  (IPv4: 127.0.0.1) port 8080.
+[6/18/17 14:16:01:146 UTC] 0000002f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:8080/IBMMGMTRest/
+[6/18/17 14:16:01:147 UTC] 0000002f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:8080/
+[6/18/17 14:16:01:148 UTC] 00000026 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[6/18/17 14:16:01:151 UTC] 00000026 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[6/18/17 14:16:01:191 UTC] 00000021 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [jsp-2.3, ejbLite-3.2, managedBeans-1.0, jsf-2.2, servlet-3.1, beanValidation-1.1, jndi-1.0, jsonp-1.0, jdbc-4.1, icap:managementConnector-1.0, jaxrs-2.0, jaxrsClient-2.0, el-3.0, json-1.0, jpaContainer-2.1, cdi-1.2, websocket-1.1, jpa-2.1, appState-2.0].
+[6/18/17 14:16:01:200 UTC] 00000021 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 44.056 seconds.
+[6/18/17 14:16:01:200 UTC] 00000021 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[6/18/17 14:16:01:221 UTC] 0000002f com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host *  (IPv4) port 8080.
+[6/18/17 14:16:01:231 UTC] 0000002f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://44897c50-363d-40dd-4702-bb671664b02c:8080/IBMMGMTRest/
+[6/18/17 14:16:01:232 UTC] 0000002f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://44897c50-363d-40dd-4702-bb671664b02c:8080/
+[6/18/17 14:16:01:534 UTC] 00000037 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /home/vcap/app/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[6/18/17 14:16:02:280 UTC] 00000026 .jaxrs20.cdi.component.JaxRsFactoryImplicitBeanCDICustomizer W CWWKW1001W: The scope PerRequest of JAXRS-2.0 Resource FacebookService does not match the CDI scope javax.enterprise.context.ApplicationScoped. Liberty gets resource instance from CDI.
+[6/18/17 14:16:02:281 UTC] 00000026 .jaxrs20.cdi.component.JaxRsFactoryImplicitBeanCDICustomizer W CWWKW1001W: The scope PerRequest of JAXRS-2.0 Resource CacheService does not match the CDI scope javax.enterprise.context.ApplicationScoped. Liberty gets resource instance from CDI.
+[6/18/17 14:16:02:282 UTC] 00000026 .jaxrs20.cdi.component.JaxRsFactoryImplicitBeanCDICustomizer W CWWKW1001W: The scope PerRequest of JAXRS-2.0 Resource ConversationService does not match the CDI scope javax.enterprise.context.ApplicationScoped. Liberty gets resource instance from CDI.
+[6/18/17 14:16:02:282 UTC] 00000026 .jaxrs20.cdi.component.JaxRsFactoryImplicitBeanCDICustomizer W CWWKW1002W: The CDI scope of JAXRS-2.0 Provider CORSFilter is javax.enterprise.context.Dependent. Liberty gets the provider instance from CDI.
+[6/18/17 14:16:02:340 UTC] 00000026 .ibm.ws.jaxrs.2.0.common:1.0.17.cl170220170523-1818(id=148)] W No resource methods have been found for resource class com.everis.assistant.services.FacebookService
+[6/18/17 14:16:02:410 UTC] 00000026 .ibm.ws.jaxrs.2.0.common:1.0.17.cl170220170523-1818(id=148)] I Setting the server's publish address to be /api/
+[6/18/17 14:16:02:903 UTC] 00000026 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [myapp] [/] [javax.ws.rs.core.Application]: Initialization successful.
+[6/18/17 14:16:36:852 UTC] 00000040 SystemErr                                                    R log4j:WARN No appenders could be found for logger (net.sf.ehcache.config.ConfigurationFactory).
+[6/18/17 14:16:36:854 UTC] 00000040 SystemErr                                                    R log4j:WARN Please initialize the log4j system properly.
+[6/18/17 14:16:36:856 UTC] 00000040 SystemErr                                                    R log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[6/18/17 14:16:37:890 UTC] 00000040 SystemErr                                                    R java.lang.NullPointerException
+[6/18/17 14:16:37:892 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.core.util.LocaleUtils.parseLocale(LocaleUtils.java:9)
+[6/18/17 14:16:38:069 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.core.util.LocaleUtils.isValid(LocaleUtils.java:32)
+[6/18/17 14:16:38:072 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.controller.HeaderController.checkHeaders(HeaderController.java:51)
+[6/18/17 14:16:38:073 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.controller.HeaderController$Proxy$_$$_WeldClientProxy.checkHeaders(Unknown Source)
+[6/18/17 14:16:38:076 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController.resolve(ConversationController.java:69)
+[6/18/17 14:16:38:077 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController$Proxy$_$$_WeldClientProxy.resolve(Unknown Source)
+[6/18/17 14:16:38:080 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.resolveConversation(ConversationService.java:185)
+[6/18/17 14:16:38:082 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.conversation(ConversationService.java:101)
+[6/18/17 14:16:38:083 UTC] 00000040 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService$Proxy$_$$_WeldClientProxy.conversation(Unknown Source)
+[6/18/17 14:16:38:084 UTC] 00000040 SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[6/18/17 14:16:38:085 UTC] 00000040 SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:38:086 UTC] 00000040 SystemErr                                                    R 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:38:087 UTC] 00000040 SystemErr                                                    R 	at java.lang.reflect.Method.invoke(Unknown Source)
+[6/18/17 14:16:38:088 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean.performInvocation(LibertyJaxRsServerFactoryBean.java:632)
+[6/18/17 14:16:38:089 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.performInvocation(LibertyJaxRsInvoker.java:118)
+[6/18/17 14:16:38:089 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+[6/18/17 14:16:38:091 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:252)
+[6/18/17 14:16:38:092 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:189)
+[6/18/17 14:16:38:092 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:423)
+[6/18/17 14:16:38:093 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:99)
+[6/18/17 14:16:38:094 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:61)
+[6/18/17 14:16:38:094 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:99)
+[6/18/17 14:16:38:095 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+[6/18/17 14:16:38:096 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+[6/18/17 14:16:38:096 UTC] 00000040 SystemErr                                                    R 	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+[6/18/17 14:16:38:097 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+[6/18/17 14:16:38:097 UTC] 00000040 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:149)
+[6/18/17 14:16:38:098 UTC] 00000040 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doPost(IBMRestServlet.java:107)
+[6/18/17 14:16:38:098 UTC] 00000040 SystemErr                                                    R 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+[6/18/17 14:16:38:099 UTC] 00000040 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:99)
+[6/18/17 14:16:38:100 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1290)
+[6/18/17 14:16:38:100 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:778)
+[6/18/17 14:16:38:101 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:475)
+[6/18/17 14:16:38:101 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1157)
+[6/18/17 14:16:38:102 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4983)
+[6/18/17 14:16:38:102 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer31.osgi.webapp.WebApp31.handleRequest(WebApp31.java:528)
+[6/18/17 14:16:38:103 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:315)
+[6/18/17 14:16:38:104 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1025)
+[6/18/17 14:16:38:104 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:280)
+[6/18/17 14:16:38:105 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:967)
+[6/18/17 14:16:38:106 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:359)
+[6/18/17 14:16:38:106 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:318)
+[6/18/17 14:16:38:107 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:471)
+[6/18/17 14:16:38:107 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:405)
+[6/18/17 14:16:38:108 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:285)
+[6/18/17 14:16:38:108 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:256)
+[6/18/17 14:16:38:110 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:174)
+[6/18/17 14:16:38:111 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:83)
+[6/18/17 14:16:38:112 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:504)
+[6/18/17 14:16:38:112 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:574)
+[6/18/17 14:16:38:113 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:929)
+[6/18/17 14:16:38:114 UTC] 00000040 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1018)
+[6/18/17 14:16:38:114 UTC] 00000040 SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[6/18/17 14:16:38:115 UTC] 00000040 SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[6/18/17 14:16:38:116 UTC] 00000040 SystemErr                                                    R 	at java.lang.Thread.run(Unknown Source)
+[6/18/17 14:16:38:161 UTC] 00000040 SystemOut                                                    O b9255e77-9e6b-46bd-b228-ac3b217b133b
+[6/18/17 14:16:43:364 UTC] 0000004b org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'apikey-find' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:43:570 UTC] 00000044 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'apikey-find' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:45:063 UTC] 00000044 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'channel-list' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:45:065 UTC] 0000004b org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'channel-list' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:45:095 UTC] 0000004b SystemErr                                                    R javax.cache.CacheException
+[6/18/17 14:16:45:109 UTC] 0000004b SystemErr                                                    R 	at org.ehcache.jcache.JCacheManager.createCache(JCacheManager.java:106)
+[6/18/17 14:16:45:110 UTC] 0000004b SystemErr                                                    R 	at org.jsr107.ri.annotations.DefaultCacheResolverFactory.getCacheResolver(DefaultCacheResolverFactory.java:73)
+[6/18/17 14:16:45:110 UTC] 0000004b SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheLookupUtil.createCacheResultMethodDetails(AbstractCacheLookupUtil.java:281)
+[6/18/17 14:16:45:124 UTC] 0000004b SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheLookupUtil.getMethodDetails(AbstractCacheLookupUtil.java:190)
+[6/18/17 14:16:45:127 UTC] 0000004b SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheLookupUtil.getCacheKeyInvocationContext(AbstractCacheLookupUtil.java:72)
+[6/18/17 14:16:45:127 UTC] 0000004b SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheResultInterceptor.cacheResult(AbstractCacheResultInterceptor.java:49)
+[6/18/17 14:16:45:128 UTC] 0000004b SystemErr                                                    R 	at org.jsr107.ri.annotations.cdi.CacheResultInterceptor.cacheResult(CacheResultInterceptor.java:50)
+[6/18/17 14:16:45:128 UTC] 0000004b SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[6/18/17 14:16:45:130 UTC] 0000004b SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:45:131 UTC] 0000004b SystemErr                                                    R 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:45:132 UTC] 0000004b SystemErr                                                    R 	at java.lang.reflect.Method.invoke(Unknown Source)
+[6/18/17 14:16:45:133 UTC] 0000004b SystemErr                                                    R 	at org.jboss.weld.interceptor.reader.SimpleInterceptorInvocation$SimpleMethodInvocation.invoke(SimpleInterceptorInvocation.java:73)
+[6/18/17 14:16:45:133 UTC] 0000004b SystemErr                                                    R 	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeAroundInvoke(InterceptorMethodHandler.java:84)
+[6/18/17 14:16:45:134 UTC] 0000004b SystemErr                                                    R 	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeInterception(InterceptorMethodHandler.java:72)
+[6/18/17 14:16:45:135 UTC] 0000004b SystemErr                                                    R 	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.invoke(InterceptorMethodHandler.java:56)
+[6/18/17 14:16:45:135 UTC] 0000004b SystemErr                                                    R 	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:79)
+[6/18/17 14:16:45:136 UTC] 0000004b SystemErr                                                    R 	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:68)
+[6/18/17 14:16:45:136 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.access.data.ChannelDAO$Proxy$_$$_WeldSubclass.findAll(Unknown Source)
+[6/18/17 14:16:45:136 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.access.data.ChannelDAO$Proxy$_$$_WeldClientProxy.findAll(Unknown Source)
+[6/18/17 14:16:45:137 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.controller.HeaderController.channelBelongsToProject(HeaderController.java:174)
+[6/18/17 14:16:45:137 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.controller.HeaderController.checkHeaders(HeaderController.java:62)
+[6/18/17 14:16:45:138 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.controller.HeaderController$Proxy$_$$_WeldClientProxy.checkHeaders(Unknown Source)
+[6/18/17 14:16:45:139 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController.resolve(ConversationController.java:69)
+[6/18/17 14:16:45:140 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController$Proxy$_$$_WeldClientProxy.resolve(Unknown Source)
+[6/18/17 14:16:45:141 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.resolveConversation(ConversationService.java:185)
+[6/18/17 14:16:45:141 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.conversation(ConversationService.java:101)
+[6/18/17 14:16:45:142 UTC] 0000004b SystemErr                                                    R 	at com.everis.assistant.services.ConversationService$Proxy$_$$_WeldClientProxy.conversation(Unknown Source)
+[6/18/17 14:16:45:142 UTC] 0000004b SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[6/18/17 14:16:45:143 UTC] 0000004b SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:45:143 UTC] 0000004b SystemErr                                                    R 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:45:144 UTC] 0000004b SystemErr                                                    R 	at java.lang.reflect.Method.invoke(Unknown Source)
+[6/18/17 14:16:45:144 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean.performInvocation(LibertyJaxRsServerFactoryBean.java:632)
+[6/18/17 14:16:45:145 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.performInvocation(LibertyJaxRsInvoker.java:118)
+[6/18/17 14:16:45:145 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+[6/18/17 14:16:45:146 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:252)
+[6/18/17 14:16:45:146 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:189)
+[6/18/17 14:16:45:147 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:423)
+[6/18/17 14:16:45:147 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:99)
+[6/18/17 14:16:45:148 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:61)
+[6/18/17 14:16:45:148 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:99)
+[6/18/17 14:16:45:148 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+[6/18/17 14:16:45:149 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+[6/18/17 14:16:45:149 UTC] 0000004b SystemErr                                                    R 	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+[6/18/17 14:16:45:150 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+[6/18/17 14:16:45:151 UTC] 0000004b SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:149)
+[6/18/17 14:16:45:152 UTC] 0000004b SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doPost(IBMRestServlet.java:107)
+[6/18/17 14:16:45:152 UTC] 0000004b SystemErr                                                    R 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+[6/18/17 14:16:45:152 UTC] 0000004b SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:99)
+[6/18/17 14:16:45:153 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1290)
+[6/18/17 14:16:45:158 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:778)
+[6/18/17 14:16:45:158 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:475)
+[6/18/17 14:16:45:159 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1157)
+[6/18/17 14:16:45:159 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:82)
+[6/18/17 14:16:45:160 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:956)
+[6/18/17 14:16:45:160 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:280)
+[6/18/17 14:16:45:161 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:967)
+[6/18/17 14:16:45:161 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:359)
+[6/18/17 14:16:45:162 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:318)
+[6/18/17 14:16:45:162 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:471)
+[6/18/17 14:16:45:162 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:405)
+[6/18/17 14:16:45:163 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:285)
+[6/18/17 14:16:45:163 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:256)
+[6/18/17 14:16:45:164 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:174)
+[6/18/17 14:16:45:164 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:83)
+[6/18/17 14:16:45:180 UTC] 00000044 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'project-list' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:45:165 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:504)
+[6/18/17 14:16:45:205 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:574)
+[6/18/17 14:16:45:206 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:929)
+[6/18/17 14:16:45:206 UTC] 0000004b SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1018)
+[6/18/17 14:16:45:207 UTC] 0000004b SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[6/18/17 14:16:45:208 UTC] 0000004b SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[6/18/17 14:16:45:209 UTC] 0000004b SystemErr                                                    R 	at java.lang.Thread.run(Unknown Source)
+[6/18/17 14:16:45:210 UTC] 0000004b SystemOut                                                    O 72077024-a0e0-431e-815c-d13b2df96165
+[6/18/17 14:16:45:394 UTC] 00000044 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'project-find' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:45:550 UTC] 00000044 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'channel-name' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:48:800 UTC] 00000044 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'answer-find' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:48:931 UTC] 00000044 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'session-insert' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:16:51:797 UTC] 00000044 SystemErr                                                    R java.lang.NullPointerException
+[6/18/17 14:16:51:798 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.core.util.LocaleUtils.parseLocale(LocaleUtils.java:9)
+[6/18/17 14:16:51:816 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.core.util.LocaleUtils.isValid(LocaleUtils.java:32)
+[6/18/17 14:16:51:822 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.controller.HeaderController.checkHeaders(HeaderController.java:51)
+[6/18/17 14:16:51:829 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.controller.HeaderController$Proxy$_$$_WeldClientProxy.checkHeaders(Unknown Source)
+[6/18/17 14:16:51:836 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController.resolve(ConversationController.java:69)
+[6/18/17 14:16:51:843 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController$Proxy$_$$_WeldClientProxy.resolve(Unknown Source)
+[6/18/17 14:16:51:850 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.resolveConversation(ConversationService.java:185)
+[6/18/17 14:16:51:858 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.conversation(ConversationService.java:101)
+[6/18/17 14:16:51:875 UTC] 00000044 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService$Proxy$_$$_WeldClientProxy.conversation(Unknown Source)
+[6/18/17 14:16:51:894 UTC] 00000044 SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[6/18/17 14:16:51:901 UTC] 00000044 SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:51:907 UTC] 00000044 SystemErr                                                    R 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:16:51:922 UTC] 00000044 SystemErr                                                    R 	at java.lang.reflect.Method.invoke(Unknown Source)
+[6/18/17 14:16:51:928 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean.performInvocation(LibertyJaxRsServerFactoryBean.java:632)
+[6/18/17 14:16:51:933 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.performInvocation(LibertyJaxRsInvoker.java:118)
+[6/18/17 14:16:51:935 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+[6/18/17 14:16:51:936 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:252)
+[6/18/17 14:16:51:937 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:189)
+[6/18/17 14:16:51:938 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:423)
+[6/18/17 14:16:51:938 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:99)
+[6/18/17 14:16:51:940 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:61)
+[6/18/17 14:16:51:942 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:99)
+[6/18/17 14:16:51:943 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+[6/18/17 14:16:51:944 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+[6/18/17 14:16:51:944 UTC] 00000044 SystemErr                                                    R 	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+[6/18/17 14:16:51:945 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+[6/18/17 14:16:51:945 UTC] 00000044 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:149)
+[6/18/17 14:16:51:946 UTC] 00000044 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doPost(IBMRestServlet.java:107)
+[6/18/17 14:16:51:946 UTC] 00000044 SystemErr                                                    R 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+[6/18/17 14:16:51:951 UTC] 00000044 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:99)
+[6/18/17 14:16:51:953 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1290)
+[6/18/17 14:16:51:954 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:778)
+[6/18/17 14:16:51:955 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:475)
+[6/18/17 14:16:51:955 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1157)
+[6/18/17 14:16:51:956 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:82)
+[6/18/17 14:16:51:956 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:956)
+[6/18/17 14:16:51:957 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:280)
+[6/18/17 14:16:51:957 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:967)
+[6/18/17 14:16:51:958 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:359)
+[6/18/17 14:16:51:958 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:318)
+[6/18/17 14:16:51:959 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:471)
+[6/18/17 14:16:51:960 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:405)
+[6/18/17 14:16:51:960 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:285)
+[6/18/17 14:16:51:961 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:256)
+[6/18/17 14:16:51:962 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:174)
+[6/18/17 14:16:51:962 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:83)
+[6/18/17 14:16:51:963 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:504)
+[6/18/17 14:16:51:964 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:574)
+[6/18/17 14:16:51:964 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:929)
+[6/18/17 14:16:51:965 UTC] 00000044 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1018)
+[6/18/17 14:16:51:965 UTC] 00000044 SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[6/18/17 14:16:51:966 UTC] 00000044 SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[6/18/17 14:16:51:966 UTC] 00000044 SystemErr                                                    R 	at java.lang.Thread.run(Unknown Source)
+[6/18/17 14:16:51:969 UTC] 00000044 SystemOut                                                    O cecf3945-9f47-4331-b805-d25b7686dedb
+[6/18/17 14:18:25:204 UTC] 00000070 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'db-config-cache' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:18:41:850 UTC] 00000077 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'session-find' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:18:41:877 UTC] 00000075 org.jsr107.ri.annotations.DefaultCacheResolverFactory        W No Cache named 'session-find' was found in the CacheManager, a default cache will be created.
+[6/18/17 14:18:41:899 UTC] 00000075 SystemErr                                                    R javax.cache.CacheException
+[6/18/17 14:18:41:900 UTC] 00000075 SystemErr                                                    R 	at org.ehcache.jcache.JCacheManager.createCache(JCacheManager.java:106)
+[6/18/17 14:18:41:901 UTC] 00000075 SystemErr                                                    R 	at org.jsr107.ri.annotations.DefaultCacheResolverFactory.getCacheResolver(DefaultCacheResolverFactory.java:73)
+[6/18/17 14:18:41:902 UTC] 00000075 SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheLookupUtil.createCacheResultMethodDetails(AbstractCacheLookupUtil.java:281)
+[6/18/17 14:18:41:902 UTC] 00000075 SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheLookupUtil.getMethodDetails(AbstractCacheLookupUtil.java:190)
+[6/18/17 14:18:41:903 UTC] 00000075 SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheLookupUtil.getCacheKeyInvocationContext(AbstractCacheLookupUtil.java:72)
+[6/18/17 14:18:41:903 UTC] 00000075 SystemErr                                                    R 	at org.jsr107.ri.annotations.AbstractCacheResultInterceptor.cacheResult(AbstractCacheResultInterceptor.java:49)
+[6/18/17 14:18:41:907 UTC] 00000075 SystemErr                                                    R 	at org.jsr107.ri.annotations.cdi.CacheResultInterceptor.cacheResult(CacheResultInterceptor.java:50)
+[6/18/17 14:18:41:907 UTC] 00000075 SystemErr                                                    R 	at sun.reflect.GeneratedMethodAccessor35.invoke(Unknown Source)
+[6/18/17 14:18:41:908 UTC] 00000075 SystemErr                                                    R 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:18:41:908 UTC] 00000075 SystemErr                                                    R 	at java.lang.reflect.Method.invoke(Unknown Source)
+[6/18/17 14:18:41:908 UTC] 00000075 SystemErr                                                    R 	at org.jboss.weld.interceptor.reader.SimpleInterceptorInvocation$SimpleMethodInvocation.invoke(SimpleInterceptorInvocation.java:73)
+[6/18/17 14:18:41:909 UTC] 00000075 SystemErr                                                    R 	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeAroundInvoke(InterceptorMethodHandler.java:84)
+[6/18/17 14:18:41:909 UTC] 00000075 SystemErr                                                    R 	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.executeInterception(InterceptorMethodHandler.java:72)
+[6/18/17 14:18:41:910 UTC] 00000075 SystemErr                                                    R 	at org.jboss.weld.interceptor.proxy.InterceptorMethodHandler.invoke(InterceptorMethodHandler.java:56)
+[6/18/17 14:18:41:910 UTC] 00000075 SystemErr                                                    R 	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:79)
+[6/18/17 14:18:41:910 UTC] 00000075 SystemErr                                                    R 	at org.jboss.weld.bean.proxy.CombinedInterceptorAndDecoratorStackMethodHandler.invoke(CombinedInterceptorAndDecoratorStackMethodHandler.java:68)
+[6/18/17 14:18:41:915 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.access.data.SessionDAO$Proxy$_$$_WeldSubclass.findBySessionCode(Unknown Source)
+[6/18/17 14:18:41:915 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.access.data.SessionDAO$Proxy$_$$_WeldClientProxy.findBySessionCode(Unknown Source)
+[6/18/17 14:18:41:919 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController.resolveSession(ConversationController.java:265)
+[6/18/17 14:18:41:919 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController.resolve(ConversationController.java:72)
+[6/18/17 14:18:41:921 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.controller.ConversationController$Proxy$_$$_WeldClientProxy.resolve(Unknown Source)
+[6/18/17 14:18:41:922 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.resolveConversation(ConversationService.java:185)
+[6/18/17 14:18:41:922 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService.conversation(ConversationService.java:138)
+[6/18/17 14:18:41:927 UTC] 00000075 SystemErr                                                    R 	at com.everis.assistant.services.ConversationService$Proxy$_$$_WeldClientProxy.conversation(Unknown Source)
+[6/18/17 14:18:41:932 UTC] 00000075 SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[6/18/17 14:18:41:933 UTC] 00000075 SystemErr                                                    R 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:18:41:939 UTC] 00000075 SystemErr                                                    R 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+[6/18/17 14:18:41:940 UTC] 00000075 SystemErr                                                    R 	at java.lang.reflect.Method.invoke(Unknown Source)
+[6/18/17 14:18:41:940 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean.performInvocation(LibertyJaxRsServerFactoryBean.java:632)
+[6/18/17 14:18:41:940 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.performInvocation(LibertyJaxRsInvoker.java:118)
+[6/18/17 14:18:41:941 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:96)
+[6/18/17 14:18:41:941 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:252)
+[6/18/17 14:18:41:941 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:189)
+[6/18/17 14:18:41:942 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:423)
+[6/18/17 14:18:41:942 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:99)
+[6/18/17 14:18:41:942 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:61)
+[6/18/17 14:18:41:951 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:99)
+[6/18/17 14:18:41:952 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+[6/18/17 14:18:41:952 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+[6/18/17 14:18:41:952 UTC] 00000075 SystemErr                                                    R 	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+[6/18/17 14:18:41:953 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+[6/18/17 14:18:41:953 UTC] 00000075 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:149)
+[6/18/17 14:18:41:954 UTC] 00000075 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doPost(IBMRestServlet.java:107)
+[6/18/17 14:18:41:954 UTC] 00000075 SystemErr                                                    R 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+[6/18/17 14:18:41:954 UTC] 00000075 SystemErr                                                    R 	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:99)
+[6/18/17 14:18:41:963 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1290)
+[6/18/17 14:18:41:964 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:778)
+[6/18/17 14:18:41:964 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:475)
+[6/18/17 14:18:41:965 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1157)
+[6/18/17 14:18:41:965 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:82)
+[6/18/17 14:18:41:965 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:956)
+[6/18/17 14:18:41:966 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:280)
+[6/18/17 14:18:41:966 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:967)
+[6/18/17 14:18:41:966 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:359)
+[6/18/17 14:18:41:975 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:318)
+[6/18/17 14:18:41:975 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:471)
+[6/18/17 14:18:41:976 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:405)
+[6/18/17 14:18:41:976 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:285)
+[6/18/17 14:18:41:977 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:256)
+[6/18/17 14:18:41:977 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:174)
+[6/18/17 14:18:41:977 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:83)
+[6/18/17 14:18:41:978 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:504)
+[6/18/17 14:18:41:978 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:574)
+[6/18/17 14:18:41:978 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:929)
+[6/18/17 14:18:41:991 UTC] 00000075 SystemErr                                                    R 	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1018)
+[6/18/17 14:18:41:992 UTC] 00000075 SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[6/18/17 14:18:42:012 UTC] 00000075 SystemErr                                                    R 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[6/18/17 14:18:42:013 UTC] 00000075 SystemErr                                                    R 	at java.lang.Thread.run(Unknown Source)
+[6/18/17 14:18:42:014 UTC] 00000075 SystemOut                                                    O 34164cf8-0e0d-4758-ada3-45c69ff05486
+[6/18/17 14:47:45:241 UTC] 0000016a om.ibm.ws.cloudoe.management.client.connector.Configurations I CWSCX0161I: The property management_server_url is configured with https://rtmgmt.ng.bluemix.net.
+[6/18/17 14:47:45:242 UTC] 0000016a om.ibm.ws.cloudoe.management.client.connector.Configurations I CWSCX0162I: The property management_server_tokenValidationURL is detected as https://rtmgmt.ng.bluemix.net/rest/token/v1/check_token.
+[6/18/17 14:47:45:244 UTC] 0000016a com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.cloudoe.management.client.liberty.connector] [/IBMMGMTRest] [ManagmentClientServlet]: Initialization successful.
+[6/18/17 15:03:09:121 UTC] 0000022e com.ibm.ws.webcontainer.extension                            W SRVE0190E: File not found: /favicon.ico

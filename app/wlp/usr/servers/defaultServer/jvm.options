@@ -1,0 +1,11 @@
+-Xtune:virtualized
+-Dcom.ibm.jsse2.overrideDefaultTLS=true
+-Xdump:none
+-Xdump:heap:defaults:file=../../../../../dumps/heapdump.%Y%m%d.%H%M%S.%pid.%seq.phd
+-Xdump:java:defaults:file=../../../../../dumps/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt
+-Xdump:snap:defaults:file=../../../../../dumps/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc
+-Xdump:heap+java+snap:events=user
+-Xshareclasses:none
+-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,request=serial+exclusive,exec=../../../../.buildpack-diagnostics/killjava.sh
+-Dcom.ibm.tx.jta.disable2PC=true
+-Xmx384M

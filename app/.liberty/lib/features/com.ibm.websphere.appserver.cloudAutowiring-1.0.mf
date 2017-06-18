@@ -1,0 +1,13 @@
+Subsystem-ManifestVersion: 1
+IBM-Feature-Version: 2
+IBM-ShortName: cloudAutowiring-1.0
+Subsystem-SymbolicName: com.ibm.websphere.appserver.cloudAutowiring-1.0;visibility:=public
+Subsystem-Version: 1.0.0
+Subsystem-Type: osgi.subsystem.feature
+Subsystem-Content: com.ibm.ws.cloudoe.autowiring; version="[1,1.0.100)",
+ com.ibm.ws.resource; version="[1,1.0.100)"
+Manifest-Version: 1.0
+Subsystem-Name: AutoWiring
+Subsystem-Description: %description
+Subsystem-Localization: OSGI-INF/l10n/subsystem
+IBM-ProductID: com.ibm.websphere.appserver

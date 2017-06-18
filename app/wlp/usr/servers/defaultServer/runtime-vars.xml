@@ -1,0 +1,10 @@
+<server>
+  <variable name='port' value='8080'/>
+  <variable name='home' value='/home/vcap/app'/>
+  <variable name='vcap_app_port' value='8080'/>
+  <variable name='application_name' value='eva-broker-cors'/>
+  <variable name='application_version' value='be0f4eff-f724-48d2-937e-20dd9597dcb5'/>
+  <variable name='host' value='0.0.0.0'/>
+  <variable name='application_uris' value='eva-broker-cors.mybluemix.net'/>
+  <variable name='application.log.dir' value='../../../../../logs'/>
+</server>

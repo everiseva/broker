@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subchannels xmlns="http://assistant.everis.com/subchannels"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://assistant.everis.com/subchannels subchannels.xsd ">
+
+	<subchannel channel="WEB" responsePriority="simpleText">SIMPLE_TEXT</subchannel>
+	<subchannel channel="WEB" responsePriority="html simpleText simpleTextSocialNetwork">TESTE</subchannel>
+	<subchannel channel="WEB">OUVIDORIA</subchannel>
+	<subchannel channel="WEB">CHAT</subchannel>
+	<subchannel channel="WEB_MOBILE">CHAT_MOBILE</subchannel>
+	<subchannel channel="APP_MOBILE">CHAT_APP</subchannel>
+	<subchannel channel="SOCIAL_NETWORK">FACEBOOK</subchannel>
+	<subchannel channel="SOCIAL_NETWORK">TWITTER</subchannel>
+
+</subchannels>

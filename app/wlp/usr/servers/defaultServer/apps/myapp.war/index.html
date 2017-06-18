@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Broker | Assistente Virtual</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.js"></script>
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+	
+	
+</head>
+<body data-ng-app="tapp" data-ng-controller="tctrl">
+	<div class="container">
+		<div class="form-group">
+			<div>
+				<label for="text">Frase:</label>
+				<input type="text" name="text" id="text" data-ng-model="text" class="form-control" />
+			</div>
+			<br/>
+			<button class="btn btn-info" data-ng-click="postText()">GO!</button>
+		</div>
+	</div>
+</body>
+<script>
+var app = angular.module('tapp', []);
+app.controller('tctrl',function($scope, $http) {
+	$scope.text='oi';
+	$scope.postText = function () {
+		var data = {
+			text:$scope.text,
+			returnAudio:true
+		};
+		//$http.post('api/',JSON.stringfy(data)).then({
+		console.log(data);
+		$http.post('api/conversations',data, {headers: {
+				'Content-Type': 'application/json',
+				'Accept': 'application/json',
+				'CHANNEL':'WEB',
+				'SUBCHANNEL':'CHAT',
+				'API-KEY':'56448193-695a-40b4-9ffc-28891a758034',
+				'OS':'WINDOWS',
+				'IP':'127.0.0.1',
+				'LOCALE':'pt-BR'
+			} }).then(
+			function(res) {
+				console.log(res.data);
+				playByteArray(stringToByteArray(atob(res.data.intent.audio.content)));
+			},
+			function(res) {
+				console.err('err', res.data);
+			}
+		);
+		console.log('ha');
+	};
+	init();
+});
+		
+		
+
+var stringToByteArray = function(str) {
+    var bytes = [];
+    for (var i = 0; i < str.length; ++i) {
+        bytes.push(str.charCodeAt(i));
+    }
+    return bytes;
+};
+		
+		
+		
+
+function init() {
+	if (!window.AudioContext) {
+		if (!window.webkitAudioContext) {
+			alert("Your browser does not support any AudioContext and cannot play back this audio.");
+			return;
+		}
+		window.AudioContext = window.webkitAudioContext;
+	}
+
+	context = new AudioContext();
+}
+
+function playByteArray(byteArray) {
+	console.log(typeof byteArray, byteArray.length);
+	var arrayBuffer = new ArrayBuffer(byteArray.length);
+	var bufferView = new Uint8Array(arrayBuffer);
+	for (i = 0; i < byteArray.length; i++) {
+		bufferView[i] = byteArray[i];
+	}
+	console.log('lalala', arrayBuffer);
+	context.decodeAudioData(arrayBuffer, function(buffer) {
+		buf = buffer;
+		console.log('lalalaooo');
+		play();
+	});
+}
+
+// Play the loaded file
+function play() {
+	// Create a source node from the buffer
+	var source = context.createBufferSource();
+	source.buffer = buf;
+	// Connect to the final output node (the speakers)
+	source.connect(context.destination);
+	// Play immediately
+	source.start(0);
+}
+</script>
+</html>

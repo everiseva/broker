@@ -1,0 +1,59 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://assistant.everis.com/subchannels"
+	xmlns:tns="http://assistant.everis.com/subchannels"
+	elementFormDefault="qualified">
+	
+	<simpleType name="code">
+		<restriction base="string">
+			<maxLength value="25"></maxLength>
+			<pattern value="[A-Z0-9_]+"></pattern>		
+		</restriction>
+	</simpleType>
+	
+	<element name="subchannels">
+		<complexType>
+			<sequence>
+				<element name="subchannel" maxOccurs="unbounded" minOccurs="1">
+					<complexType>
+						<simpleContent>
+							<extension base="tns:code">
+								<attribute name="channel" use="required">
+									<simpleType>
+										<restriction base="string">
+											<enumeration value="WEB"></enumeration>
+											<enumeration value="WEB_MOBILE"></enumeration>
+											<enumeration value="APP_MOBILE"></enumeration>
+											<enumeration value="SOCIAL_NETWORK"></enumeration>
+										</restriction>
+									</simpleType>
+								</attribute>
+								<attribute name="responsePriority" default="html" type="tns:attList">
+								</attribute>
+							</extension>
+						</simpleContent>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+		<unique name="uniqueSubChannel">
+			<selector xpath="tns:subchannel"></selector>
+			<field xpath="."></field>
+		</unique>
+	</element>
+	
+	<simpleType name="attList">
+		<list itemType="tns:responsePriorityType"/>
+	</simpleType>
+	<simpleType name="responsePriorityType">
+		<restriction base="string">
+			<enumeration value="html" />
+			<enumeration value="htmlMobileWeb" />
+			<enumeration value="simpleTextMobileApp" />
+			<enumeration value="simpleTextMobileWeb" />
+			<enumeration value="simpleTextSocialNetwork" />
+			<enumeration value="simpleText" />
+			<enumeration value="htmlMobileApp" />
+		</restriction>
+	</simpleType>
+	
+</schema>

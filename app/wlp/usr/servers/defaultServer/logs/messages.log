@@ -1,0 +1,12 @@
+********************************************************************************
+product = WebSphere Application Server 17.0.0.2 (wlp-1.0.17.cl170220170523-1818)
+wlp.install.dir = /home/vcap/app/.liberty/
+server.config.dir = /home/vcap/app/wlp/usr/servers/defaultServer/
+java.home = /home/vcap/app/.java/jre
+java.version = 1.8.0
+java.runtime = Java(TM) SE Runtime Environment (pxa6480sr4fp1-20170215_01 (SR4 FP1))
+os = Linux (4.4.0-75-generic; amd64) (en_US)
+process = 38@44897c50-363d-40dd-4702-bb671664b02c
+********************************************************************************
+[6/18/17 14:15:09:074 UTC] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[6/18/17 14:15:14:539 UTC] 0000001a com.ibm.ws.config.xml.internal.XMLConfigParser               A CWWKG0028A: Processing included configuration resource: /home/vcap/app/wlp/usr/servers/defaultServer/runtime-vars.xml

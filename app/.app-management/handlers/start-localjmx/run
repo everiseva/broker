@@ -1,0 +1,81 @@
+#!/usr/bin/env ruby
+# Encoding: utf-8
+# IBM WebSphere Application Server Liberty Buildpack
+# Copyright 2014 the original author or authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+require 'fileutils'
+require 'json'
+require 'rexml/document'
+
+# directories
+INSTALL_DIR = File.expand_path('../../..', File.dirname(__FILE__)).freeze
+APP_MGMT_DIR = File.join(INSTALL_DIR, '.app-management').freeze
+
+$LOAD_PATH.unshift File.expand_path(APP_MGMT_DIR, __FILE__)
+
+require 'utils/droplet_utils'
+require 'utils/handler_utils.rb'
+require 'utils/xml_utils.rb'
+
+def backup_jvm(jvm_file, backup_dir)
+  file_name = File.basename(jvm_file)
+  backup_file = File.join(backup_dir, file_name)
+  FileUtils.mkdir_p(backup_dir)
+  return if File.exist?(backup_file)
+  FileUtils.cp(jvm_file, backup_file)
+end
+
+def update_jvm_options(jvm_file, port, rmi_hostname)
+  # Read contents of jvm.options and remove any existing debug-related properties. Then add our debug properties
+  file_contents = File.readlines(jvm_file)
+  exclude = Regexp.new('-Djava.rmi.server.hostname|-Dcom.sun.management.jmxremote.authenticate|-Dcom.sun.management.jmxremote.ssl|-Dcom.sun.management.jmxremote.port|-Dcom.sun.management.jmxremote.rmi.port')
+  file_contents.delete_if { |line| line =~ exclude }
+  file_contents << "-Djava.rmi.server.hostname=#{rmi_hostname}"
+  file_contents << '-Dcom.sun.management.jmxremote.authenticate=false'
+  file_contents << '-Dcom.sun.management.jmxremote.ssl=false'
+  file_contents << "-Dcom.sun.management.jmxremote.port=#{port}"
+  file_contents << "-Dcom.sun.management.jmxremote.rmi.port=#{port}"
+
+  # Write contents back to jvm.option, overwriting existing content.
+  jvm_options = File.new(jvm_file, 'w')
+  jvm_options.puts(file_contents)
+  jvm_options.close
+end
+
+def add_jmx_feature(server_dir)
+  doc = REXML::Document.new('<server></server>')
+  feature_manager = REXML::Element.new('featureManager', doc.root)
+  added_feature = REXML::Element.new('feature', feature_manager)
+  added_feature.add_text('localConnector-1.0')
+
+  # Write the server.xml to server's configDropins directory
+  config_dropins = File.join(server_dir, 'configDropins', 'defaults')
+  FileUtils.mkdir_p(config_dropins)
+  XmlUtils.write_formatted_xml_file(doc, File.join(config_dropins, 'app_mgmt_localjmx.xml'))
+end
+
+server_dir = DropletUtils.get_server_directory(INSTALL_DIR)
+config = Utils::HandlerUtils.get_configuration('localjmx')
+
+# backup and update the jvm.options file
+backup_dir = File.join(APP_MGMT_DIR, 'backup', 'localjmx')
+jvm_options_file = File.join(server_dir, 'jvm.options')
+backup_jvm(jvm_options_file, backup_dir)
+port = config['port'] || DropletUtils.find_port(5000, 6000)
+rmi_hostname = config['rmi_hostname'] || '127.0.0.1'
+update_jvm_options(jvm_options_file, port, rmi_hostname)
+
+# enable localConnector-1.0 feature
+add_jmx_feature(server_dir)

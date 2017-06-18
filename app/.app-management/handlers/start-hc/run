@@ -1,0 +1,157 @@
+#!/usr/bin/env ruby
+# Encoding: utf-8
+# IBM WebSphere Application Server Liberty Buildpack
+# Copyright 2015 the original author or authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+require 'fileutils'
+require 'json'
+
+# directories
+INSTALL_DIR = File.expand_path('../../..', File.dirname(__FILE__)).freeze
+APP_MGMT_DIR = File.join(INSTALL_DIR, '.app-management').freeze
+
+$LOAD_PATH.unshift File.expand_path(APP_MGMT_DIR, __FILE__)
+
+require 'utils/droplet_utils'
+require 'utils/handler_utils.rb'
+
+#------------------------------------------------------------------------------------
+# Create the MQTT configuration file for the Mosquitto broker.
+#
+# @param [String] config_file mqtt configuration file inlcuding its path
+# @param [String] port mqtt broker port to listen on
+# @param [String] log_dest output of broker log
+#------------------------------------------------------------------------------------
+def create_mqtt_configuration(config_file, port, log_dest)
+  File.open(config_file, 'w') do |mqtt_config|
+    # See mosquitto.conf(5) for more information about the mqtt configuration
+    mqtt_config.puts("log_dest file #{log_dest}")
+    mqtt_config.puts('log_timestamp true')
+    mqtt_config.puts("port #{port}")
+  end
+end
+
+#------------------------------------------------------------------------------------
+# The proxy entry for the MQTT port for Health Center to be added to the proxy configuration.
+#
+# @param [String] type type value
+# @param [String] backend_port mqtt listening port
+# @param [String] host host name to allow requests for
+# @param [String] uri_prefix  uri_prefix string to be tunneled
+# @return [String] returns a proxy configuration entry
+#------------------------------------------------------------------------------------
+def proxy_entry_value(type, backend_port, host, uri_prefix)
+  # Update the proxy config file with a tunnel to the MQTT broker to support healthcenter
+  props = {}
+  props['type'] = type
+  props['backend'] = "127.0.0.1:#{backend_port}"
+  props['host'] = host
+  props['uri_prefix'] = uri_prefix
+  value = props.to_json
+  # Need to escape quotes to preserve them.
+  value.gsub!('"', '\"')
+end
+
+#------------------------------------------------------------------------------------
+# Retrieves the application name from the VCAP_APPLICATION environment variable as the
+# MQTT application name.
+#
+# @return [String] returns the application name
+#------------------------------------------------------------------------------------
+def mqtt_app_name
+  JSON.parse(ENV['VCAP_APPLICATION'.freeze])['application_name'.freeze]
+end
+
+#------------------------------------------------------------------------------------
+# Backups up a jvm options file to a specified backup location.  NOTE: if the backup
+# already exists, it's assumed that the Health Center handler has already been invoked
+# and will exit.
+#
+# @param [String] jvm_file the jvm options file to be backed up
+# @param [String] backup_dir the location to store the backup to
+#------------------------------------------------------------------------------------
+def backup_jvm(jvm_file, backup_dir)
+  file_name = File.basename(jvm_file)
+  backup_file = File.join(backup_dir, file_name)
+  FileUtils.mkdir_p(backup_dir)
+  return if File.exist?(backup_file)
+  FileUtils.cp(jvm_file, backup_file)
+end
+
+#------------------------------------------------------------------------------------
+# Updates a jvm options file to include Health Center options. If the jvm options file
+# already contains Health Center options, the options will be replaced.
+#
+# @param [String] jvm_file the jvm options file to be updated
+#------------------------------------------------------------------------------------
+def update_jvm_options(jvm_file)
+  # Enable HealthCenter
+  hc_jvm_option = '-Xhealthcenter'.freeze
+
+  # HealthCenter system properties to configure mqtt
+  hc_prop_jmx = '-Dcom.ibm.diagnostics.healthcenter.jmx=off'.freeze
+  hc_prop_mqtt = '-Dcom.ibm.diagnostics.healthcenter.mqtt=on'.freeze
+  hc_prop_mqtt_app = "-Dcom.ibm.diagnostics.healthcenter.mqtt.application.id=#{mqtt_app_name}".freeze
+
+  # Read contents of jvm.options and remove any existing broker and healthcenter properties. Then add broker
+  # and healthcenter properties
+  file_contents = File.readlines(jvm_file)
+  exclude = Regexp.new("#{hc_jvm_option}|#{hc_prop_jmx}|#{hc_prop_mqtt}|#{hc_prop_mqtt_app}")
+  file_contents.delete_if { |line| line =~ exclude }
+  file_contents << hc_jvm_option.to_s
+  file_contents << hc_prop_jmx.to_s
+  file_contents << hc_prop_mqtt.to_s
+  file_contents << hc_prop_mqtt_app.to_s
+
+  # Write contents back to jvm.option, overwriting existing content.
+  jvm_options = File.new(jvm_file, 'w')
+  jvm_options.puts(file_contents)
+  jvm_options.close
+end
+
+# Returns true if the runtime is using an IBM JVM.
+#
+# @return [Boolean]  true if IBM JVM
+def ibm_jvm?
+  jvm_type = ENV['JVM'.freeze]
+  jvm_type == '' || jvm_type.nil? || 'ibmjre'.casecmp(jvm_type) == 0
+end
+
+# Only IBM JDK is supported for HealthCenter.  HealthCenter requires Dev Mode and its assumed
+# that Dev Mode is enabled as this handler would be invoked by a dev-mode handler.
+if ibm_jvm?
+  server_dir = DropletUtils.get_server_directory(INSTALL_DIR)
+  config = Utils::HandlerUtils.get_configuration('hc')
+
+  # backup and update the jvm options file with Health Center required configurations
+  backup_dir = File.join(APP_MGMT_DIR, 'backup', 'hc').freeze
+  jvm_options_file = File.join(server_dir, 'jvm.options').freeze
+  backup_jvm(jvm_options_file, backup_dir)
+  update_jvm_options(jvm_options_file)
+
+  mqtt_port = config['port'] || DropletUtils.find_port(1883, 2883)
+
+  # customize mqtt broker configuration
+  mqtt_dir = File.join(APP_MGMT_DIR, 'mosquitto').freeze
+  mqtt_configuration = File.join(mqtt_dir, 'mosquitto.conf').freeze
+  mqtt_log_dest = File.join(INSTALL_DIR, '..', 'logs', 'mosquitto.log').freeze # log_dest value for the MQTT configuration file
+  create_mqtt_configuration(mqtt_configuration, mqtt_port, mqtt_log_dest)
+
+  # add the proxy configuration for healthcenter and invoke the Mosquitto broker
+  exec(%(
+    #{APP_MGMT_DIR}/scripts/add_proxy_entry hc #{proxy_entry_value('tunnel', mqtt_port, '*', 'bluemix-tunnel/hc')}
+    #{mqtt_dir}/bin/mosquitto -c #{mqtt_configuration} -d
+  ))
+end

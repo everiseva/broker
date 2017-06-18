@@ -1,0 +1,9 @@
+version=0.1
+userId=vcap
+userUid=2000
+processId=38
+vmId=38
+displayName=/home/vcap/app/.liberty/bin/tools/ws-server.jar\ defaultServer
+notifier=_notifier
+replyFile=/home/vcap/tmp/.com_ibm_tools_attach/38/replyInfo
+attachNotificationSync=/home/vcap/tmp/.com_ibm_tools_attach/38/attachNotificationSync

@@ -1,0 +1,45 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+	
+
+	<!-- By default, Ehcache stored the cached files in temp folder. -->
+	<!-- <diskStore path="java.io.tmpdir" /> -->
+
+	<!-- Ask Ehcache to store cache in this path -->
+	<!-- <diskStore path="c:\\cache" /> -->
+
+	<!--
+		TODO: see the proper amount of maxEntriesLocalHeap
+		TODO: see the proper amount of maxEntriesLocalDisk
+		TODO: see the proper amount of diskSpoolBufferSizeMB
+		
+		Setting the idle time to 30 minutes.
+		
+		If the Broker must evict/expirate sessions within a given time, 
+		the timeToLiveSeconds must be set to the time needed and the 
+		recommended memoryStoreEvictionPolicy is FIFO.
+	 -->
+	<cache name="sessionCode"
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="10000000"
+		eternal="false"
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="1800" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LFU"
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache name="facebookRecipientId"
+		maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="10000000"
+		eternal="false"
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="1800" timeToLiveSeconds="0"
+		memoryStoreEvictionPolicy="LFU"
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+</ehcache>
